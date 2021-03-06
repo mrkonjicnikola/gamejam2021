@@ -65,7 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CharacterBehaviour.cs" />
-    <None Include="Assets\Five Seamless Tileable Ground Textures\read me.txt" />
+    <Compile Include="Assets\Desert, Wasteland\SimpleGridShader\DistanceScaling.cs" />
+    <None Include="Assets\Materials\Five Seamless Tileable Ground Textures\read me.txt" />
+    <None Include="Assets\Desert, Wasteland\SimpleGridShader\README.txt" />
+    <None Include="Assets\Desert, Wasteland\SimpleGridShader\GridShader.shader" />
+    <None Include="Assets\Desert, Wasteland\Lowpoly_Wasteland_Props\Readme\Readme.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/STISEOPU/Desert Of The Real/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

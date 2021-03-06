@@ -6,7 +6,8 @@ using UnityEngine;
 public class CharacterBehaviour : MonoBehaviour {
 
     //Rigidbody rigidBody;
-    
+    private Animator myAnimator;
+
     public float speed = 2.0f;
     
     public Vector3 movement;
@@ -21,20 +22,26 @@ public class CharacterBehaviour : MonoBehaviour {
 
     bool canMove;
     float rayLength = 1f;
+    [SerializeField] float threshold;
 
+    
 
     void Start() {
         //rigidBody = GetComponent<Rigidbody>();
-        //isMoving = false;
+        myAnimator = GetComponent<Animator>();
 
         currentDirection = up;
         nextPosition = Vector3.forward;
         destination = transform.position;
         canMove = false;
+
     }
 
     void Update() {
         ProcessInput();
+        
+        if (Vector3.Distance(destination, transform.position) <= threshold) myAnimator.SetBool("walking", false);
+
     }
 
     private void ProcessInput() {
@@ -44,22 +51,23 @@ public class CharacterBehaviour : MonoBehaviour {
             nextPosition = Vector3.forward;
             currentDirection = up;
             canMove = true;
+            myAnimator.SetBool("walking", true);
+            //StartCoroutine("TriggerAnimation");
         } else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
             nextPosition = Vector3.back;
             currentDirection = down;
             canMove = true;
+            myAnimator.SetBool("walking", true);
         } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
             nextPosition = Vector3.left;
             currentDirection = left;
             canMove = true;
+            myAnimator.SetBool("walking", true);
         } else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
             nextPosition = Vector3.right;
             currentDirection = right;
             canMove = true;
-        } else if (Input.GetKeyDown(KeyCode.M)) {
-            print("p: " + transform.position);
-            print("d: " + destination);
-            print("np: " + nextPosition);
+            myAnimator.SetBool("walking", true);
         }
 
         if (Vector3.Distance(destination, transform.position) <= 0.00001f) {
@@ -88,5 +96,12 @@ public class CharacterBehaviour : MonoBehaviour {
             }
         }
         return true;
+    }
+
+
+    public IEnumerator TriggerAnimation() {
+        yield return new WaitForSeconds(0.6295f);
+        myAnimator.SetBool("walking", false);
+
     }
 }
