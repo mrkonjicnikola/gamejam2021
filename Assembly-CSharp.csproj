@@ -66,10 +66,26 @@
   <ItemGroup>
     <Compile Include="Assets\CharacterBehaviour.cs" />
     <Compile Include="Assets\Desert, Wasteland\SimpleGridShader\DistanceScaling.cs" />
+    <Compile Include="Assets\LevelController.cs" />
+    <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
+    <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\VolumetricMultiLineBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineVertexData.cs" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-LightSaber.shader" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-LightSaber.shader" />
     <None Include="Assets\Materials\Five Seamless Tileable Ground Textures\read me.txt" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAdditive.shader" />
     <None Include="Assets\Desert, Wasteland\SimpleGridShader\README.txt" />
     <None Include="Assets\Desert, Wasteland\SimpleGridShader\GridShader.shader" />
     <None Include="Assets\Desert, Wasteland\Lowpoly_Wasteland_Props\Readme\Readme.txt" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAlphaBlended.shader" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAlphaBlended.shader" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAdditive.shader" />
+    <None Include="Assets\VolumetricLines\BuiltInRenderPipeline\Shaders\_SingleLineShader.cginc" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/STISEOPU/Desert Of The Real/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

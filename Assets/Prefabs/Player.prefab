@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   movement: {x: 0, y: 0, z: 0}
-  threshold: 0.5
+  threshold: 0.08
 --- !u!1 &3092649045065933526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,15 +3505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 9db60e4191072c24782bd9b3c550a856, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 9db60e4191072c24782bd9b3c550a856, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.438826
+      value: -1.439
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 9db60e4191072c24782bd9b3c550a856, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.31881204
+      value: 0.319
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 9db60e4191072c24782bd9b3c550a856, type: 3}
       propertyPath: m_LocalRotation.x

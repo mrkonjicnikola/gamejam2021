@@ -8,6 +8,8 @@ public class CharacterBehaviour : MonoBehaviour {
     //Rigidbody rigidBody;
     private Animator myAnimator;
 
+    LevelController levelController;
+
     public float speed = 2.0f;
     
     public Vector3 movement;
@@ -29,6 +31,9 @@ public class CharacterBehaviour : MonoBehaviour {
     void Start() {
         //rigidBody = GetComponent<Rigidbody>();
         myAnimator = GetComponent<Animator>();
+
+        GameObject levelControllerObject = GameObject.Find("LevelController");
+        levelController = levelControllerObject.GetComponent<LevelController>();
 
         currentDirection = up;
         nextPosition = Vector3.forward;
@@ -99,9 +104,24 @@ public class CharacterBehaviour : MonoBehaviour {
     }
 
 
-    public IEnumerator TriggerAnimation() {
+    /* public IEnumerator TriggerAnimation() {
         yield return new WaitForSeconds(0.6295f);
         myAnimator.SetBool("walking", false);
 
+    } */
+
+
+    private void OnTriggerEnter(Collider other) {
+        if (gameObject.tag == "Shadow" && other.gameObject.tag == "ShadowDoor") {
+            levelController.toggleShadowFinishBool();
+            //levelController.shadowFinish = true;
+            //print("shadow finish = " + levelController.shadowFinish);
+        }
+        if (gameObject.tag == "Player" && other.gameObject.tag == "PlayerDoor") {
+            levelController.togglePlayerFinishBool();
+            //levelController.playerFinish = true;
+            //print("player finish = " + levelController.playerFinish);
+        }
     }
+
 }
