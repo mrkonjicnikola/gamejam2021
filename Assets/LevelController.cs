@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelController : MonoBehaviour
-{
+public class LevelController : MonoBehaviour {
     public bool playerFinish;
     public bool shadowFinish;
 
-    void Start()
-    {
+    void Start() {
         playerFinish = false;
         shadowFinish = false;
     }
 
-    void Update()
-    {
-        if(playerFinish && shadowFinish) {
+    void Update() {
+        if (playerFinish && shadowFinish) {
             print("simultanious finish");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //change level
         }
-        
+
         //if(playerFinish) print("player finished");
         //if(shadowFinish) print("shadow finished");
+
+        //DEBUG
+        if (Input.GetKeyDown(KeyCode.N)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void toggleShadowFinishBool() {

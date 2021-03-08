@@ -6,9 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level0.unity
-    guid: 7684fceecfe3e7542ab019a82cfd30eb
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8361f39a813ae8548b7889ea01262c7f
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 7724fedfb5eb2b7499434003e2691043
+    path: Assets/Scenes/Instructions.unity
+    guid: 7a5411d76348b4e47b63f6f72e8ebefe
+  - enabled: 1
+    path: Assets/Scenes/Level1_NeonWildWest.unity
+    guid: d26f8484a9e22684e96509a88e083ea2
+  - enabled: 1
+    path: Assets/Scenes/Level2_NeonWildWest.unity
+    guid: e3de5aaa5738b3f4a8beea95b5dae237
+  - enabled: 1
+    path: Assets/Scenes/Level3_NeonWildWest.unity
+    guid: 33bf72b398341064ba606f326096ae88
+  - enabled: 1
+    path: Assets/Scenes/Level4_NeonWildWest.unity
+    guid: f0ec9ec309e2e8f4490e8089b5be9c4b
+  - enabled: 1
+    path: Assets/Scenes/Level5_NeonWildWest.unity
+    guid: cd2acedba85f6c142b106ee89e27b5f4
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 9aaf3b7fbee3cfa4e83b5b74bce579fc
   m_configObjects: {}
