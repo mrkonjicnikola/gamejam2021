@@ -8,6 +8,8 @@ TagManager:
   - Shadow
   - ShadowDoor
   - PlayerDoor
+  - Fire
+  - Bullet
   layers:
   - Default
   - TransparentFX

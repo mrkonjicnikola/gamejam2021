@@ -11,7 +11,7 @@ public class CharacterBehaviour : MonoBehaviour {
     LevelController levelController;
 
     public float speed = 2.0f;
-    
+
     public Vector3 movement;
 
     Vector3 up = Vector3.zero;
@@ -26,7 +26,7 @@ public class CharacterBehaviour : MonoBehaviour {
     float rayLength = 1f;
     [SerializeField] float threshold;
 
-    
+
 
     void Start() {
         //rigidBody = GetComponent<Rigidbody>();
@@ -40,11 +40,12 @@ public class CharacterBehaviour : MonoBehaviour {
         destination = transform.position;
         canMove = false;
 
+        threshold = 0.06f;
     }
 
     void Update() {
         ProcessInput();
-        
+
         if (Vector3.Distance(destination, transform.position) <= threshold) myAnimator.SetBool("walking", false);
 
     }
@@ -82,9 +83,9 @@ public class CharacterBehaviour : MonoBehaviour {
                     destination = transform.position + nextPosition;
                     direction = nextPosition;
                     canMove = false;
-                } 
+                }
             }
-            
+
         }
 
     }
@@ -95,8 +96,8 @@ public class CharacterBehaviour : MonoBehaviour {
 
         Debug.DrawRay(myRay.origin, myRay.direction, Color.red);
 
-        if (Physics.Raycast(myRay, out hit, rayLength)){
-            if(hit.collider.tag == "Obstacle") {
+        if (Physics.Raycast(myRay, out hit, rayLength)) {
+            if (hit.collider.tag == "Obstacle") {
                 return false;
             }
         }
@@ -114,14 +115,18 @@ public class CharacterBehaviour : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (gameObject.tag == "Shadow" && other.gameObject.tag == "ShadowDoor") {
             levelController.toggleShadowFinishBool();
-            //levelController.shadowFinish = true;
-            //print("shadow finish = " + levelController.shadowFinish);
         }
         if (gameObject.tag == "Player" && other.gameObject.tag == "PlayerDoor") {
             levelController.togglePlayerFinishBool();
-            //levelController.playerFinish = true;
-            //print("player finish = " + levelController.playerFinish);
         }
+
+        if (other.gameObject.tag == "Fire") {
+            levelController.fireCollision= true;
+        }
+        if (other.gameObject.tag == "Bullet") {
+            levelController.bulletCollision = true;
+        }
+
     }
 
 }
