@@ -26,6 +26,8 @@ public class CharacterBehaviour : MonoBehaviour {
     float rayLength = 1f;
     [SerializeField] float threshold;
 
+    private bool inputOK;
+
 
 
     void Start() {
@@ -39,8 +41,7 @@ public class CharacterBehaviour : MonoBehaviour {
         nextPosition = Vector3.forward;
         destination = transform.position;
         canMove = false;
-
-        threshold = 0.06f;
+        inputOK = true;
     }
 
     void Update() {
@@ -53,27 +54,42 @@ public class CharacterBehaviour : MonoBehaviour {
     private void ProcessInput() {
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
-            nextPosition = Vector3.forward;
-            currentDirection = up;
-            canMove = true;
-            myAnimator.SetBool("walking", true);
-            //StartCoroutine("TriggerAnimation");
-        } else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
-            nextPosition = Vector3.back;
-            currentDirection = down;
-            canMove = true;
-            myAnimator.SetBool("walking", true);
-        } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
-            nextPosition = Vector3.left;
-            currentDirection = left;
-            canMove = true;
-            myAnimator.SetBool("walking", true);
-        } else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
-            nextPosition = Vector3.right;
-            currentDirection = right;
-            canMove = true;
-            myAnimator.SetBool("walking", true);
+        if (inputOK) {
+
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+                nextPosition = Vector3.forward;
+                currentDirection = up;
+                canMove = true;
+                myAnimator.SetBool("walking", true);
+
+                inputOK = false;
+                Invoke("inputChange", 0.6f);
+            } else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+                nextPosition = Vector3.back;
+                currentDirection = down;
+                canMove = true;
+                myAnimator.SetBool("walking", true);
+
+                inputOK = false;
+                Invoke("inputChange", 0.6f);
+            } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
+                nextPosition = Vector3.left;
+                currentDirection = left;
+                canMove = true;
+                myAnimator.SetBool("walking", true);
+
+                inputOK = false;
+                Invoke("inputChange", 0.6f);
+            } else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
+                nextPosition = Vector3.right;
+                currentDirection = right;
+                canMove = true;
+                myAnimator.SetBool("walking", true);
+
+                inputOK = false;
+                Invoke("inputChange", 0.6f);
+            }
+
         }
 
         if (Vector3.Distance(destination, transform.position) <= 0.00001f) {
@@ -102,6 +118,10 @@ public class CharacterBehaviour : MonoBehaviour {
             }
         }
         return true;
+    }
+
+    private void inputChange() {
+        inputOK = true;
     }
 
 

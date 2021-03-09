@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFinish: 0
   shadowFinish: 0
+  fireCollision: 0
+  bulletCollision: 0

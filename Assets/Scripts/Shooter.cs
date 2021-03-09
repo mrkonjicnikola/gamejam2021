@@ -29,22 +29,6 @@ public class Shooter : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        
-
-        if (Input.GetKey(KeyCode.P)) {
-            if(Time.time > shootRateTimeStamp) {
-                GameObject gameObject = (GameObject)Instantiate(bullet, gun.position, gun.rotation);
-
-                var rotationVector = transform.rotation.eulerAngles;
-                rotationVector.x = 90;
-                gameObject.transform.rotation = Quaternion.Euler(rotationVector);
-
-                gameObject.GetComponent<Rigidbody>().AddForce(gun.forward * shootForce);
-                shootRateTimeStamp = Time.time + shootRate;
-
-            }
-        }
-
     }
 
     private void shootBullets() {

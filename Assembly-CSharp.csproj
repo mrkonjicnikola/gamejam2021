@@ -73,10 +73,13 @@
     <Compile Include="Assets\Particle Effects\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Particle Effects\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Particle Effects\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\AudioDoNotDestroy.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\ButtonBehaviour.cs" />
     <Compile Include="Assets\Scripts\CharacterBehaviour.cs" />
+    <Compile Include="Assets\Scripts\GameAudioDestroy.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
+    <Compile Include="Assets\Scripts\MainMenuAudioDestroy.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <None Include="Assets\Particle Effects\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <None Include="Assets\Desert, Wasteland, Bullets\SimpleGridShader\README.txt" />

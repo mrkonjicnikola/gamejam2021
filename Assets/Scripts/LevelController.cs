@@ -42,6 +42,9 @@ public class LevelController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.N)) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        if (Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void toggleShadowFinishBool() {
@@ -60,11 +63,10 @@ public class LevelController : MonoBehaviour {
         }
     }
 
-    private void checkplayer() {
+    private void checkPlayer() {
         if (!playerFinish) { // if not simultaneous finish
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-
 
 }

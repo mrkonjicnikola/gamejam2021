@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Instructions.unity
     guid: 7a5411d76348b4e47b63f6f72e8ebefe
   - enabled: 1
+    path: Assets/Scenes/Commands.unity
+    guid: 5695de2c09c85b84aa045a172e5e3a19
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 4df37ee4651ad4f4fbc345b24f5c4a85
+  - enabled: 1
     path: Assets/Scenes/Level1_NeonWildWest.unity
     guid: d26f8484a9e22684e96509a88e083ea2
   - enabled: 1
