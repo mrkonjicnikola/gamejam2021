@@ -79,7 +79,6 @@
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <None Include="Assets\Particle Effects\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
-    <None Include="Assets\Desert, Wasteland, Bullets\Bullets\Props\Ammunition\ReadMe.txt" />
     <None Include="Assets\Desert, Wasteland, Bullets\SimpleGridShader\README.txt" />
     <None Include="Assets\Desert, Wasteland, Bullets\SimpleGridShader\GridShader.shader" />
     <None Include="Assets\Desert, Wasteland, Bullets\Lowpoly_Wasteland_Props\Readme\Readme.txt" />
