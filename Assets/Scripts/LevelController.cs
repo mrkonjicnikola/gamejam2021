@@ -10,11 +10,15 @@ public class LevelController : MonoBehaviour {
     public bool fireCollision;
     public bool bulletCollision;
 
+    GameObject audioGameObject;
+
     void Start() {
         playerFinish = false;
         shadowFinish = false;
         fireCollision = false;
         bulletCollision = false;
+
+        audioGameObject = GameObject.Find("GameBackgroundAudio");
     }
 
     void Update() {
@@ -31,10 +35,10 @@ public class LevelController : MonoBehaviour {
         }
 
         if (fireCollision) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            reloadScene();
         }
         if (bulletCollision) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            reloadScene();
         }
 
 
@@ -43,7 +47,7 @@ public class LevelController : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         if (Input.GetKeyDown(KeyCode.R)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            reloadScene();
         }
     }
 
@@ -59,14 +63,19 @@ public class LevelController : MonoBehaviour {
 
     private void checkShadow() {
         if (!shadowFinish) { // if not simultaneous finish
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            reloadScene();
         }
     }
 
     private void checkPlayer() {
         if (!playerFinish) { // if not simultaneous finish
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            reloadScene();
         }
+    }
+
+    private void reloadScene() {
+        if(SceneManager.GetActiveScene().buildIndex == 4) GameObject.Destroy(audioGameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
